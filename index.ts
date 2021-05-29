@@ -1,4 +1,4 @@
-const w : number = window.innerWidth * 0.9 
+const w : number = window.innerWidth * 0.5 
 const h : number = window.innerHeight * 0.9 
 const parts : number = 3 
 const lines : number = 5 
@@ -43,7 +43,7 @@ class DrawingUtil {
         const gap : number = w / lines 
         const sf : number = ScaleUtil.sinify(scale)
         context.save()
-        context.translate(0, h / 2)
+        context.translate(0, h - gap * Math.cos(deg))
         for (var j = 0; j < lines; j++) {
             const sfj : number = ScaleUtil.divideScale(sf, j, lines)
             const sfj1 : number = ScaleUtil.divideScale(sfj, 0, parts)
@@ -56,7 +56,7 @@ class DrawingUtil {
             DrawingUtil.drawLine(context, 0, 0, -gap * sfj1, 0)
             context.restore()
             context.save()
-            context.translate(0, -(h / 2 + gap) * (1 - sfj3))
+            context.translate(0, -gap -(h - gap * Math.cos(deg)) * (1 - sfj3))
             context.fillRect(-gap, 0, gap, gap)
             context.restore()
             context.restore()
