@@ -1,0 +1,10 @@
+const w : number = window.innerWidth * 0.9 
+const h : number = window.innerHeight * 0.9 
+const parts : number = 3 
+const lines : number = 5 
+const scGap : number = 0.02 / (parts * lines)
+const strokeFactor : number = 90 
+const sizeFactor : number = 3.9 
+const delay : number = 20 
+const backColor : string = "#BDBDBD"
+const deg : number = Math.PI / 4 
